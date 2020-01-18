@@ -1,0 +1,98 @@
+/* Schakel commentaar in of uit om de verschillende mogelijkheden uit te proberen */
+
+button
+{
+border-radius: 5%;
+font-size: 3em;
+}
+p{
+	font-size: 3em;
+}
+/*menu*/
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+ul {
+	display: flex; margin: 0 0 0 auto;
+		padding: 0;
+		list-style-type: none;
+}
+.zoekvak {
+	display: inline-flex;
+}
+
+
+body {
+	font-family: sans-serif;
+	font-size: 1.25rem;
+}
+.flexcontainer {
+	margin: 100px;
+	border: 1px solid black;
+	box-shadow: .2em .2em .3em 0 rgba(0,0,0,.5);
+}
+
+li {
+	padding: 8px;
+}
+a {
+	font-size: 1.6rem;
+	text-decoration: none;
+	color: inherit;
+}
+.zoekvak {
+	padding-right: 8px;
+}
+input[type="text"] {
+	min-width: 250px;
+	max-width:100%;
+}
+.flexcontainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+.product {
+	padding: 1em;
+	flex: 1 0 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+img {
+	width: auto%;
+}
+.product-info {
+	padding-top: 1em;
+	font-size: 1rem;
+	text-align: center;
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+	.product {
+		flex: 1 0 33%;
+	}
+	.product:first-child,			/* Let op de specificiteit! Klasse + pseudoklasse scoort hoger dan enkelvoudige .product-declaraties hierna. */
+	.product:nth-child(2) { 	/* Daarom is de media query afgebakend met een max-width. */
+		flex: 1 0 50%;
+	}
+}
+@media (min-width: 900px) {
+	.product {
+		flex: 1 0 25%;
+	}
+}
+@media (min-width: 1024px) {
+	.product {
+		flex: 1 0 20%;
+	}
+}
+
+}
+.product {
+	background-color: white;
+	border: 1px solid #eee;
+}
