@@ -9,9 +9,9 @@ try {
     //Pas query uitvoeren wanneer verbinding succesvol is.
     //bereid query voor
   //  $query = "SELECT id, modelshirt, kleur, maat, aantal_voorraad FROM artikelen ORDER BY id ASC";
-$Maat = $_GET["Maat1"]="M";
-$idNaam1= $_GET['m-hals1'] = "m-hals1";
-   $query = "SELECT modelshirt, maat, aantal_voorraad FROM artikelen WHERE modelshirt= '".$idNaam1."' AND maat ='".$Maat."' AND aantal_voorraad >= 1 LIMIT 1";
+//$Maat = $_GET["Maat1"]="M";
+
+   $query = "SELECT modelshirt, maat, aantal_voorraad FROM artikelen WHERE modelshirt='".$_SESSION['artikelNaam']."' AND maat ='".$_SESSION['artikelMaat']."' AND aantal_voorraad >= 1 LIMIT 1";
     $statement = $connection->query($query);
 
 } catch(PDOException $e) {
@@ -27,5 +27,6 @@ foreach ($statement as $row)
 
         $nwl Maat &#58; $row[1] $nwl
         Aantal_voorraad&#58; $row[2] $nwl$nwl";
+        
 }
 ?>

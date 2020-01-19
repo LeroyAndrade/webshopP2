@@ -1,5 +1,13 @@
-<!--Vanwege eerder besproken kapoote HDD, de website in drie dagen naast bijbaan in elkaar gezet.-->
-<!DOCTYPE html>
+<?
+if (isset($_GET['verstuur1']))
+{
+	if (!empty($_GET[Maat1]))
+	{
+		header("Location:webpaginaArtikel.php");
+	}
+}else{ echo "Geen maat ingevuld";}
+
+?><!DOCTYPE html>
 <html lang="nl">
 <head>
 	<meta charset="UTF-8">
@@ -22,16 +30,20 @@
 		</div>
 		</nav>
 
-
 	<form action="./bestellen.php" method="GET">
 <div class="flexcontainer">
 	<div class="product">
 		<div class="product-foto">
 			<img src="splash/man/m/shirt1ManM.JPG" alt="Shirt-man1">
-			<h2 name="m-hals1" value="m-hals1">&nbsp;</h2>
+			<h2>&nbsp;</h2>
 			<span>Maat</span>
+			<select name="m-hals1" hidden>
+				<option name="naamShirt" value="m-hals1" hidden></option>
+			</select>
+
 				<select name="Maat1">
 						<tr>
+							<td><option value="" selected></option></td>
 							<td><option value="s" name="s">S</option></td>
 							<td><option value="m" name="m">M</option></td>
 							<td><option value="l" name="l">L</option></td>

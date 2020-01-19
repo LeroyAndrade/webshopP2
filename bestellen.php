@@ -1,23 +1,32 @@
 <?php
-session_start();
+SESSION_START();
 
 if (isset($_GET['verstuur1']))
 {
-  $idNaam1= $_GET['m-hals1'] = "m-hals1";
-  if ($_GET['Maat1'] === "s" || $_GET['Maat1']==="m" ||$_GET['Maat1']==="l" ||$_GET['Maat1']==="xl")
+  if (!empty($_GET['Maat1']))
   {
-  
+    if ($_GET['Maat1'] === "s" || $_GET['Maat1']==="m" ||$_GET['Maat1']==="l" ||$_GET['Maat1']==="xl")
+    {
+        $abc= $_GET['Maat1'];
+        //$abc=$_GET['m-hals1'];
 
-    echo $idNaam1;
+        if ($_GET['m-hals1'])
+        {
+      $idNaam1 = $_GET['m-hals1'];
+        }
 
-    header("Location:webpaginaArtikel.php");
+        //$test=$_SESSION["j"]=$abc;
+      //echo $test;
+    echo $_SESSION["artikelMaat"]=$abc;
+    echo $_SESSION["artikelNaam"]=$idNaam1;
+   header("Location:webpaginaArtikel.php");
+    }
+  }else echo "Geen maat ingevuld";
+}
 
 
-//START/
 
 
-
-  }
 
   if ($_GET['Maat1'] === "wit")
   {
@@ -27,7 +36,7 @@ if (isset($_GET['verstuur1']))
   {
   echo $_GET['Maat1'];
   }
-}
+
 
 if (isset($_GET['verstuur2']))
 {

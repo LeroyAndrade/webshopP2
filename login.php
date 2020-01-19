@@ -1,7 +1,5 @@
 <?php
-if (session_start() != true){
-  session_start();
-};
+
 $hostname='localhost';
 $username='root';
 $password='';
